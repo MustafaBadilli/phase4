@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rule Based Game</title>
+	<script type="text/javascript" src="../static/jquery.js"></script>
+	<script type="text/javascript" src="../static/jqgame.js"></script>
+</head>
+<body>
+	<h1 align="center">Rule Based Game</h1>
+	<div align="center" id="gamename"></div>
+	<div id="chooseBlock" align="center">
+		Select a Game<br>
+		<form id="choosegameform" onSubmit="return false;">
+			{% csrf_token %}
+			<select name="selectGame"> 
+			</select><br>
+			<button name="choose">choose</button><br>
+		</form><br>
+	</div>
+	<div id="enterNameBlock" align="center">
+		{% csrf_token %}
+		Enter name:
+		<input type="text" name="name"><br>
+		Enter id:  
+		<input type="text" name="id"><br>
+		<button name="joinGame">Join</button>
+	</div>
+	<div id="readyBlock" align="center">
+		Are you ready ?<br>
+		<button name="readyOk">Ready</button>
+	</div>
+	<div id="readyMsg" align="center">
+	</div>
+	<div id="gameBlock" align="center">
+		Main game display will come here.
+	</div>
+
+</body>
+</html>
